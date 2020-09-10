@@ -3,15 +3,17 @@ import React from 'react';
 import './App.css';
 // import Clock from "./Clock";
 // import TestForm from './Form'
-import TodoList from "./TodoList";
-import TestOne from "./hooks01";
+// import TodoList from "./TodoList";
+// import TestOne from "./hooks01";
+import TodoList from "./pages/TodoList";
 
 function App() {
   console.log('APP====')
   return (
     <div className="App">
       {/*<Clock foo={obj} />*/}
-      <TestOne />
+      {/*<TestOne />*/}
+      {/*<TodoList />*/}
       <TodoList />
     </div>
   );
