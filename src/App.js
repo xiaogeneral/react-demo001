@@ -1,20 +1,17 @@
 import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
-// import Clock from "./Clock";
-// import TestForm from './Form'
-// import TodoList from "./TodoList";
-// import TestOne from "./hooks01";
-import TodoList from "./pages/TodoList";
+import store from "./storeTest";
+import { Button } from 'antd'
 
 function App() {
   console.log('APP====')
+  const handleClick = () => {
+    store.dispatch({type: 'demo'});
+  }
   return (
     <div className="App">
-      {/*<Clock foo={obj} />*/}
-      {/*<TestOne />*/}
-      {/*<TodoList />*/}
-      <TodoList />
+      <Button type="primary" onClick={handleClick}>click me!</Button>
     </div>
   );
 }

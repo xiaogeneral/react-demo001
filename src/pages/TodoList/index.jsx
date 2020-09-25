@@ -1,16 +1,18 @@
 import React, { Fragment, useState } from "react";
 import { connect } from 'react-redux'
-import { ADD_LIST } from "../../store/types";
+import { ADD_LIST, CHANGE_VALUE } from "../../store/types";
 
 const TodoList = (props) => {
   const [inputValue, setInputValue] = useState('');
-  const { list } = props;
+  const { list, dispatch } = props;
   const handleInput = (e) => {
-    // todo
     setInputValue(e.target.value);
+    dispatch({
+      type: CHANGE_VALUE,
+      payload: e.target.value
+    })
   }
   const handleAdd = () => {
-    // todo
     list.push(inputValue);
     props.dispatch({
       type: ADD_LIST,

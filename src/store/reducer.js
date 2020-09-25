@@ -19,6 +19,7 @@ export default (state = defaultState, action) => {
         ...state,
         inputValue: action.payload
       };
+    default:
+      return state;
   }
-  return state;
 }
