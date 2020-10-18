@@ -3,7 +3,7 @@ import React from 'react';
 import './App.css';
 import store from "./storeTest";
 import { Button } from 'antd'
-
+// import { TestParams } from './components/TestParams'
 function App() {
   console.log('APP====')
   const handleClick = () => {
@@ -12,6 +12,7 @@ function App() {
   return (
     <div className="App">
       <Button type="primary" onClick={handleClick}>click me!</Button>
+      {/*<TestParams />*/}
     </div>
   );
 }

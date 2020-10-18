@@ -89,6 +89,9 @@ function createThunkMiddleware(extraArgument) {
   };
 }
 ```
+ps:这是一种函数式编程的写法，思考下能用非函数式写法吗，
+也就是写成(store, next, action) =>{}的形式
+
 ### 中间件的组合及链式调用
 在redux中对中间件进行组合的方法是``applyMiddleware``，
 调用方式为``applyMiddleware(...middlewares)``
