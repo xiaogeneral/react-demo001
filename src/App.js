@@ -1,15 +1,39 @@
 import React from 'react';
 import './App.css';
-import store from "./store";
-import { Button } from 'antd'
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
+import { Provider } from 'react-redux'
+import TodoList from './pages/TodoList';
+import ConnectTodoList from './pages/TodoList/connect'
+import store from './store'
+
 function App() {
-  console.log('APP====')
-  const handleClick = () => {
-    store.dispatch({type: 'demo'});
-  }
   return (
     <div className="App">
-      <Button type="primary" onClick={handleClick}>click me!</Button>
+      <Provider store={store}>
+        <BrowserRouter>
+          <div>
+            <nav>
+              <ul>
+                <li>
+                  <Link to="/redux">redux</Link>
+                </li>
+                <li>
+                  <Link to="/react-redux">react-redux</Link>
+                </li>
+              </ul>
+            </nav>
+
+            <Switch>
+              <Route path="/redux">
+                <TodoList />
+              </Route>
+              <Route path="/react-redux">
+                <ConnectTodoList />
+              </Route>
+            </Switch>
+          </div>
+        </BrowserRouter>
+      </Provider>
     </div>
   );
 }

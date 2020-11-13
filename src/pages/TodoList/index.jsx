@@ -1,39 +1,36 @@
-import React, { Fragment, useState } from "react";
-import { connect } from 'react-redux'
-import { ADD_LIST, CHANGE_VALUE } from "../../store-old/types";
+import React, {Fragment, useEffect, useState} from "react";
+import store from "../../store";
 
 const TodoList = (props) => {
-  const [inputValue, setInputValue] = useState('');
-  const { list, dispatch } = props;
+  const { getState, dispatch, subscribe } = store;
+  const [todolistData, setTodolistData] = useState(getState());
   const handleInput = (e) => {
-    setInputValue(e.target.value);
     dispatch({
-      type: CHANGE_VALUE,
+      type: 'CHANGE_VALUE',
       payload: e.target.value
     })
   }
   const handleAdd = () => {
-    list.push(inputValue);
-    props.dispatch({
-      type: ADD_LIST,
-      payload: [...list]
+    dispatch({
+      type: 'ADD_ITEM'
     })
   }
+  // 挂载时添加订阅及卸载时取消订阅
+  useEffect(() => {
+    return subscribe(() => {
+      setTodolistData({...getState()});
+    })
+  }, [])
   return (
     <Fragment>
-      <input type="text" value={inputValue} onChange={handleInput}/>
+      <input type="text" value={todolistData.inputValue} onChange={handleInput}/>
       <button onClick={handleAdd}>提交</button>
       <ul>
         {
-          list.map((item) => <li>{item}</li>)
+          todolistData.list.map((item) => <li>{item}</li>)
         }
       </ul>
     </Fragment>
   )
 }
-const mapStateToProps = (state) => {
-  return {
-    list: state.list
-  }
-}
-export default connect(mapStateToProps)(TodoList);
+export default TodoList;

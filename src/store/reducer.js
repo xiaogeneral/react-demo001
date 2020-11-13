@@ -3,16 +3,20 @@ const initialState = {
   list: []
 }
 export default (state = initialState, action) => {
+  console.log('call?')
+  console.log(state,'state===')
   switch (action.type) {
     case 'CHANGE_VALUE':
       return {
         ...state,
         inputValue: action.payload
       };
-    case 'ADD':
+    case 'ADD_ITEM':
+      const { inputValue, list } = state;
       return {
         ...state,
-        list: action.payload
+        inputValue: '',
+        list: list.concat(inputValue)
       }
     default:
       return state

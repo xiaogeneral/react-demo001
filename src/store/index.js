@@ -9,4 +9,4 @@ import {
 import reducer from './reducer';
 const middlewares = [middleware1, middleware2, middleware3];
 
-export default createStore(reducer, {}, applyMiddleware(...middlewares));
+export default createStore(reducer, undefined, applyMiddleware(...middlewares));
