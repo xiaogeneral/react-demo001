@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { connect } from 'react-redux'
-import { ADD_LIST, CHANGE_VALUE } from "../../store/types";
+import { ADD_LIST, CHANGE_VALUE } from "../../store-old/types";
 
 const TodoList = (props) => {
   const [inputValue, setInputValue] = useState('');

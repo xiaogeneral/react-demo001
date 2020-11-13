@@ -1,6 +1,12 @@
-import { createStore, compose } from "redux";
-import reducer from "./reducer";
-const devtools = window.devToolsExtension || (() => (noop) => noop);
-const enhancers = [devtools()];
-const store = createStore(reducer, compose(...enhancers));
-export default store;
+import { createStore, applyMiddleware } from 'redux';
+// 中间件
+import {
+  middleware1,
+  middleware2,
+  middleware3
+} from '../middlewares';
+// reducer
+import reducer from './reducer';
+const middlewares = [middleware1, middleware2, middleware3];
+
+export default createStore(reducer, {}, applyMiddleware(...middlewares));

@@ -1,25 +1,20 @@
-import {
-  ADD_LIST,
-  CHANGE_VALUE
-} from './types';
-
-const defaultState = {
+const initialState = {
   inputValue: '',
   list: []
 }
-export default (state = defaultState, action) => {
+export default (state = initialState, action) => {
   switch (action.type) {
-    case ADD_LIST:
-      return {
-        ...state,
-        list: action.payload
-      };
-    case CHANGE_VALUE:
+    case 'CHANGE_VALUE':
       return {
         ...state,
         inputValue: action.payload
       };
+    case 'ADD':
+      return {
+        ...state,
+        list: action.payload
+      }
     default:
-      return state;
+      return state
   }
 }
