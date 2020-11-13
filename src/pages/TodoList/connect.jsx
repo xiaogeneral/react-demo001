@@ -1,9 +1,8 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import { connect } from 'react-redux'
 
 
 const ConnectTodoList = (props) => {
-  console.log(props, 'props')
   const { todolistData, handleInput, handleAdd } = props;
   return (
     <Fragment>
