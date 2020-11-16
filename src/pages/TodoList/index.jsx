@@ -1,5 +1,7 @@
 import React, {Fragment, useEffect, useState} from "react";
 import store from "../../store";
+import styles from './index.module.less'
+console.log(styles, 'styles');
 
 const TodoList = (props) => {
   const { getState, dispatch, subscribe } = store;
@@ -25,9 +27,9 @@ const TodoList = (props) => {
     <Fragment>
       <input type="text" value={todolistData.inputValue} onChange={handleInput}/>
       <button onClick={handleAdd}>提交</button>
-      <ul>
+      <ul className={styles['list-wrap']}>
         {
-          todolistData.list.map((item) => <li>{item}</li>)
+          todolistData.list.map((item) => <li className={styles.item}>{item}</li>)
         }
       </ul>
     </Fragment>
