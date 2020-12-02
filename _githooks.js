@@ -1,5 +1,6 @@
 function test() {
   console.log('ddddd');
-  return 1
+  // eslint-disable-next-line no-unused-expressions
+  process.exitCode = 0
 }
 test()
