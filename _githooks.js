@@ -9,7 +9,7 @@ function test() {
     );
   console.log(branchName, 'branchName')
   if (branchName === 'feature/form-validate') {
-    process.exitCode = 0
+    process.exitCode = 1
   } else {
     process.exitCode = 0
   }
