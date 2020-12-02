@@ -8,8 +8,8 @@ function test() {
     {'encoding': 'utf8'}
     );
   console.log(branchName, 'branchName')
-  if (branchName === 'test/protected') {
-    process.exitCode = 0
+  if (branchName === 'feature/form-validate') {
+    process.exitCode = 1
   } else {
     process.exitCode = 0
   }
