@@ -7,10 +7,16 @@ function test() {
     'git name-rev --name-only HEAD',
     {'encoding': 'utf8'}
     );
-  console.log(branchName, 'branchName')
-  if (branchName === 'feature/form-validate') {
-    process.exitCode = 1
+  console.log(branchName.length, 'branchName')
+  console.log(typeof branchName, 'branchName type')
+  if (branchName.includes('feature/form-validate')) {
+    console.log('禁止以命令行在master上merge')
+    child_process.execSync(
+      'git merge --abort'
+    );
+    process.exitCode = 1;
   } else {
+    console.log('er han')
     process.exitCode = 0
   }
 
