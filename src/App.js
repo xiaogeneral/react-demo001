@@ -8,7 +8,7 @@ import FormValidate from './pages/FormValidate';
 import DynamicRue from './pages/FormValidate/DynamicRue';
 
 /* 测试合并 fuck pre-merge-commit */
-/* 啦啦啦 我是卖报的小螺号  */
+/* 啦啦啦 我是卖报的小螺号 5个大洋一张报 */
 function App() {
   return (
     <div className="App">
