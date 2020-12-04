@@ -160,7 +160,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "npm run lint-staged",
-      "post-merge": "node _githooks.js"
+      "pre-merge-commit": "node _githooks.js"
     }
   },
   "lint-staged": {
