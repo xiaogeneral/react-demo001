@@ -13,6 +13,7 @@ function test() {
     process.exitCode = 1;
     console.log('还会执行吗')
   } else {
+    console.log('er han')
     process.exitCode = 0
   }
 
