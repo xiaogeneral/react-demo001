@@ -7,7 +7,7 @@ import SiderDemo from './layout'
 import FormValidate from './pages/FormValidate';
 import DynamicRue from './pages/FormValidate/DynamicRue';
 
-/* 测试合并 fuck */
+/* 测试合并 fuck pre-merge-commit */
 function App() {
   return (
     <div className="App">
