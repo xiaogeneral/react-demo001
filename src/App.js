@@ -9,7 +9,7 @@ import DynamicRue from './pages/FormValidate/DynamicRue';
 
 /* 测试合并 fuck pre-merge-commit */
 /* 啦啦啦 我是卖报的小螺号 5个大洋一张报 1个大洋5张报 */
-/* 测试怎么取消merge */
+/* 测试怎么取消merge lalala */
 function App() {
   return (
     <div className="App">
