@@ -159,6 +159,7 @@
   },
   "husky": {
     "hooks": {
+      "pre-commit": "npm run lint-staged",
       "pre-merge-commit": "node _githooks.js"
     }
   },
