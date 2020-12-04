@@ -9,6 +9,7 @@ function test() {
     );
   console.log(branchName, 'branchName')
   if (branchName === 'feature/form-validate') {
+    console.log('hi process')
     process.exitCode = 1;
     console.log('还会执行吗')
   } else {
