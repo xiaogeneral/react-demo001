@@ -159,7 +159,6 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "node _githooks.js",
       "pre-merge-commit": "node _githooks.js"
     }
   },
